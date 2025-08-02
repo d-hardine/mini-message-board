@@ -8,6 +8,15 @@
 </head>
 <body>
     <h1>Message Board</h1>
-    <div>Hello <%= locals.text %></div>
+    <a href="/new"><button>New Message</button></a>
+    <div class="messages-container">
+        <% for (let i = 0; i < messages.length; i++) { %>
+            <div class="message-card">
+                <div>Username: <%= locals.messages[i].user %></div>
+                <div>Message: <%= locals.messages[i].text %></div>
+                <div>Date: <%= locals.messages[i].added %></div>
+            </div>
+        <% } %>        
+    </div>
 </body>
 </html>
